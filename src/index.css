@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  align-items: flex-start; /* تغییر این خط */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.button-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.audio-controls,
+.video-controls {
+  margin-bottom: 20px;
+}
+.audio-player,
+.video-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.audio-player,
+.video-player,
+.recorded-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.live-player {
+  height: 200px;
+  width: 400px;
+  border: 1px solid #646cff;
+  margin-bottom: 30px;
+}
+.recorded-player video {
+  height: 400px;
+  width: 800px;
+}

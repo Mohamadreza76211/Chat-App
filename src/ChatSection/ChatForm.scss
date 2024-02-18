@@ -1,0 +1,181 @@
+.wrapper {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+  width: 800px;
+  height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border-style: dashed;
+  border-width: 8px;
+  position: relative;
+  border-color: rgba($color: #9af915, $alpha: 1);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.MainDiv {
+  overflow-y: scroll;
+  // justify-content: space-between;
+}
+
+.TextBoxAndButtonContainer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.TextBox2 {
+  width: 40%;
+  height: 30px;
+  float: left;
+  order: 1;
+  border-radius: 6px;
+  border-style: inset;
+  border-color: rgba($color: #037de7, $alpha: 1);
+}
+.TextBox2:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #58de05 0 -3px 0 inset;
+  transform: translateY(-8px);
+}
+.ContainerForVoiceSection {
+  width: 30%;
+  height: auto;
+  // float: right;
+  order: 3;
+  border-color: #3c4fe0;
+}
+
+.SendButton {
+  float: left;
+  width: 4%;
+  order: 2;
+  margin-left: 4px;
+  align-items: center;
+  appearance: none;
+  height: 30px;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  //   height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+.SendButton:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.SendButton:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.MicrophonIcon {
+  height: 25px;
+  color: white;
+}
+.MicrophonButton {
+  border-radius: 50%;
+  background-color: red;
+  border-color: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+.MicrophonButton:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px;
+}
+
+//-----------------------------------VoiceRecordingSection-----------------------------------//
+.StartButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.StartButton:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #45a049 0 -3px 0 inset;
+}
+.StartButton:focus {
+  box-shadow: #45a049 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #45a049 0 -3px 0 inset;
+}
+.VoiceRecording {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  border-radius: 50%;
+  order: 2;
+}
+.CancelButton {
+  margin-left: 14px;
+  border: none;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.CancelButton:hover {
+  color: #fd1c03;
+}
+.SaveButton {
+  margin-left: 10px;
+  border: none;
+  background-color: white;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  margin-top: 3px;
+}
+.Timer {
+  size: 2em;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+    "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  margin-top: 2px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+//------------------------------------------------------------------------------------------//
