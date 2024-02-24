@@ -76,11 +76,6 @@ const ChatApp = () => {
   //-----------------------------addMessageSection-----------------------------------//
   return (
     <div>
-      {/* {username ? (
-        <p>Welcome, {username}!</p>
-      ) : (
-        <SignInForm onSignIn={handleSignIn} />
-      )} */}
       <ChatList
         messages={messages}
         isTyping={isTyping}

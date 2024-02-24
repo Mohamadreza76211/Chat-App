@@ -1,0 +1,65 @@
+.MainDivForAdminPanel {
+  width: 80%;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  border-color: lightblue;
+  border-style: solid;
+}
+.TextFieldForNewUser {
+  order: 2;
+}
+.AddUserButton {
+  width: 10% !important;
+  height: 30px;
+  align-self: flex-end;
+  background-color: #61d1f0 !important;
+}
+.ContainerForButtons {
+  display: flex;
+  flex-direction: row;
+}
+.DeleteButton {
+  width: 40px;
+  height: 30px;
+  background-color: #61d1f0 !important;
+  margin-right: 10px !important; // I used !important because it has conflict with it's own className in Material Ui.
+}
+.ExportButton {
+  width: 40px;
+  height: 30px;
+  margin-right: 10px !important;
+  background-color: #61d1f0 !important;
+}
+.FormContainerForAdminPanel {
+  width: 80%;
+  margin-left: 0;
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border-color: lightblue;
+  border-style: solid;
+  border-top: none;
+}
+.ButtonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.AddButton {
+  width: 10% !important;
+  height: 30px;
+  float: right;
+  background-color: green !important ;
+  margin-left: 180px !important;
+  margin-top: 40px !important;
+}
+.AddingUserSection {
+  width: 20% !important;
+}

@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ChatApp from "./ChatSection/ChatApp";
 import VoiceRcording from "./VoiceRecording";
 import SignUpForm from "./SignupAndSigninSection/SignUpSection/SignUpForm";
-import SignInForm from "./SignupAndSigninSection/LogInSection/SignInForm";
+import AdminPanel from "./ClientMangement/AdminPanel";
 
 const App = () => {
   return (
@@ -11,8 +11,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/SignUpForm" exact element={<SignUpForm />} />
-          {/* <Route path="/SignInForm" element={<SignInForm />} /> */}
           <Route path="/ChatApp" element={<ChatApp />} />
+          <Route path="/AdminPanel" element={<AdminPanel />} />
         </Routes>
       </BrowserRouter>
     </div>

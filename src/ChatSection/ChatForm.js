@@ -180,6 +180,9 @@ const ChatForm = ({
     if (newMessage.trim() === "" && !blobURL) {
       return;
     }
+    if (isRecording) {
+      return;
+    } //I said, if the client is recording voice do not send any text message and the button for sending message does not work.
 
     const now = new Date();
     const formattedTime = now.toLocaleTimeString();
@@ -243,8 +246,22 @@ const ChatForm = ({
     <div className="wrapper">
       <div className="MainDiv">
         {messages.map((message, index) => (
-          <div key={index}>
-            <div key={message.date} style={{ textAlign: "left" }}>
+          <div
+            key={index}
+            className={`message ${
+              message.user === username ? "sent" : "received"
+            }`}
+          >
+            {/** In this part I declared a condition for determine if the user is sending message or receiving message.
+             * If it is sending message give sent className to it and if it is receiving message give received className. **/}
+            <div
+              key={message.date}
+              style={{
+                textAlign: message.user === username ? "left" : "right",
+              }}
+            >
+              {/** In this part I said if the current user is sending message put everything to the left part
+               * and if it is receiving message put everything to the right part. **/}
               <span
                 style={{
                   fontWeight: "bold",
@@ -252,6 +269,8 @@ const ChatForm = ({
                   display: "flex",
                   flexDirection: "column",
                   paddingLeft: "4px",
+                  marginLeft: message.user === username ? "8px" : "0",
+                  marginRight: message.user === username ? "0" : "8px",
                 }}
               >
                 <br />
@@ -262,7 +281,7 @@ const ChatForm = ({
                     fontSize: "0.9em",
                   }}
                 >
-                  ({message.date} {message.time}):
+                  ({message.date} {message.time})
                 </span>
               </span>{" "}
               {message.blob && (
@@ -275,8 +294,10 @@ const ChatForm = ({
                 style={{
                   paddingLeft: "4px",
                   borderRadius: "6px",
-                  marginLeft: "8px",
-                  backgroundColor: " lightgreen",
+                  marginLeft: message.user === username ? "8px" : "0",
+                  marginRight: message.user === username ? "0" : "8px",
+                  backgroundColor:
+                    message.user === username ? "lightgreen" : "lightblue",
                 }}
               >
                 {message.text}

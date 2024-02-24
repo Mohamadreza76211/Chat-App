@@ -1,23 +1,36 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./SignInForm.scss";
 
 const SignInForm = ({ onSignIn }) => {
-  const [username, setUsername] = useState(
-    localStorage.getItem("username") || ""
-  );
-  const [password, setPassword] = useState(
-    localStorage.getItem("password") || ""
-  );
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   const handleSignInClick = () => {
-    if (username.trim() !== "") {
-      onSignIn(username); // ارسال نام کاربری به‌صورت مستقیم به تابع onSignIn
+    // اعتبارسنجی نام کاربری و رمز عبور
+    const userList = JSON.parse(localStorage.getItem("users")) || [];
+    const user = userList.find(
+      (u) => u.username === username && u.password === password
+    );
+
+    if (user) {
+      // اگر اعتبارسنجی موفق بود، وضعیت ورود به سیستم را به true تغییر دهید
+      setIsLoggedIn(true);
+      // ورود به ChatApp با ارسال نام کاربری
+      onSignIn(username);
+    } else {
+      // اگر اعتبارسنجی ناموفق بود، نمایش پیغام خطا
+      alert("Invalid username or password");
     }
   };
-  //I used OnSignIn in handleSignInClick to send username to ChatApp. I put username in onSignIn as it's argument.
 
   return (
     <div className="FormContainer">
@@ -44,6 +57,8 @@ const SignInForm = ({ onSignIn }) => {
           <input
             className="InputForPassword"
             type="password"
+            value={password}
+            onChange={handlePasswordChange}
             placeholder="Please enter your password"
           />
         </div>
