@@ -57,9 +57,26 @@
   height: 30px;
   float: right;
   background-color: green !important ;
-  margin-left: 180px !important;
+  margin-left: 10px !important;
   margin-top: 40px !important;
 }
+
+.CancelButton {
+  width: 10% !important;
+  height: 30px;
+  float: right;
+  background-color: red !important;
+  margin-left: 10px !important;
+  margin-top: 40px !important;
+}
+.CancelButton:hover::after {
+  content: "CANCEL";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .AddingUserSection {
   width: 20% !important;
 }

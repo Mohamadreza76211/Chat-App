@@ -7,7 +7,15 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+    const input = e.target.value;
+    const onlyLetters = /^[A-Za-z]+$/;
+    if (onlyLetters.test(input) || input === "") {
+      setUsername(e.target.value);
+    } else {
+      alert("You can use only characters for username");
+      setUsername(input);
+      setUsername("");
+    }
   };
 
   const handlePasswordChange = (e) => {
