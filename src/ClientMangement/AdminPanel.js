@@ -45,13 +45,9 @@ const AdminPanel = () => {
       alert("Please choose a username");
       return;
     }
-
     const doc = new jsPDF();
-
-    // افزودن عنوان
     doc.text("User List", 10, 10);
     let exportContent = "";
-    // افزودن اطلاعات کiاربران
     users.forEach((user, index) => {
       if (userCheckboxCheckedList[index]) {
         exportContent += `${index + 1}. Username: ${user.username}\nPassword:${
@@ -64,7 +60,6 @@ const AdminPanel = () => {
 
     setUserCheckboxCheckedList(userCheckboxCheckedList.map(() => false));
     setAllUsersChecked(false);
-    // ذخیره و دانلود فایل
     doc.save("user_list.pdf");
   };
 
@@ -94,21 +89,21 @@ const AdminPanel = () => {
     setShowForm(false);
     if (!newUser || !newPassword) {
       alert("Please enter your username and password");
-      return; // بازگشت از متد اگر فیلدها خالی بودند
+      return;
     }
     const userExists = users.some((user) => user.username === newUser);
     if (userExists) {
       alert("Your User exists");
-      return; // اگر کاربر وجود داشت، عملیات اضافه کردن را لغو کن
+      return;
     }
     const newUserObject = {
       username: newUser,
-      password: newPassword, // اضافه کردن رمز عبور به اطلاعات کاربر
+      password: newPassword,
       signUpDate: new Date().toLocaleString(),
     };
     const updatedUsers = [...users, newUserObject];
     setUsers(updatedUsers);
-    localStorage.setItem("users", JSON.stringify(updatedUsers)); // ذخیره اطلاعات کاربران در localStorage
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
   };
 
   const handleAddButtonClickForTitle = () => {
@@ -118,18 +113,15 @@ const AdminPanel = () => {
       return;
     }
 
-    // یافتن فهرست کاربران انتخاب شده
     const selectedUsers = users.filter(
       (user, index) => userCheckboxCheckedList[index]
     );
 
-    // اگر کاربری انتخاب نشده باشد
     if (selectedUsers.length === 0) {
       alert("Please select a user");
       return;
     }
 
-    // اعمال تغییرات بر روی کاربران انتخاب شده
     const updatedUsers = users.map((user) => {
       if (
         selectedUsers.some(
