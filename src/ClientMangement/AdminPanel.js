@@ -253,9 +253,15 @@ const AdminPanel = () => {
                   checked={userCheckboxCheckedList[index]}
                   onChange={() => handleUserCheckboxChange(index)}
                 />
-                <span style={{ marginLeft: "5px", fontWeight: "bold" }}>{`${
-                  index + 1
-                }. ${user.username}`}</span>
+                <span style={{ marginLeft: "5px", fontWeight: "bold" }}>
+                  <span style={{ color: "blue" }}>Username:</span>{" "}
+                  <span>{user.username}</span>
+                </span>
+                {/* این خط جدید را اضافه کرده و رشته Password: در خط جدید نوشته‌ام */}
+                <span style={{ marginLeft: "5px", fontWeight: "bold" }}>
+                  <span style={{ color: "blue" }}>Password:</span>{" "}
+                  <span>{user.password}</span>
+                </span>
               </div>
             ))}
           </div>
@@ -268,7 +274,6 @@ const AdminPanel = () => {
                 color: "black",
                 backgroundColor: "#61d1f0",
                 fontWeight: "bold",
-                // paddingLeft: "48px",
                 marginLeft: "48px",
               }}
             >
@@ -280,7 +285,7 @@ const AdminPanel = () => {
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <Checkbox
-                  style={{ marginLeft: "10px", visibility: "hidden" }}
+                  style={{ marginLeft: "5px", visibility: "hidden" }}
                   checked={userCheckboxCheckedList[index]}
                   onChange={() => handleUserCheckboxChange(index)}
                 />
