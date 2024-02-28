@@ -4,7 +4,6 @@ import ChatList from "./ChatList";
 import ChatForm from "./ChatForm";
 import io from "socket.io-client";
 import SignInForm from "../SignupAndSigninSection/LogInSection/SignInForm";
-import LoginForm from "../SignupAndSigninSection/LogInSection/LoginForm";
 
 const socket = io("http://localhost:3002");
 const ChatApp = () => {
