@@ -65,7 +65,7 @@
   width: 10% !important;
   height: 30px;
   float: right;
-  background-color: red !important;
+  background-color: rgba($color: #be09f1, $alpha: 1) !important;
   margin-left: 10px !important;
   margin-top: 40px !important;
 }
@@ -79,4 +79,12 @@
 
 .AddingUserSection {
   width: 20% !important;
+}
+.DeleteButtonForTitle {
+  width: 10% !important;
+  height: 30px;
+  float: right;
+  margin-left: 10px !important;
+  margin-top: 40px !important;
+  background-color: red !important;
 }

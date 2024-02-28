@@ -76,6 +76,7 @@ const AdminPanel = () => {
     );
     setUsers(updatedUsers);
     setUserCheckboxCheckedList(updatedUsers.map(() => false));
+    setShowTitleForm(false);
   };
 
   const handleCancelAddingUser = () => {
@@ -133,6 +134,7 @@ const AdminPanel = () => {
       return user;
     });
 
+    setUserCheckboxCheckedList(updatedUsers.map(() => false));
     setUsers(updatedUsers);
     localStorage.setItem("users", JSON.stringify(updatedUsers));
   };
@@ -415,6 +417,17 @@ const AdminPanel = () => {
                   <span style={{ fontSize: "12px", fontWeight: "bold" }}>
                     {" "}
                     Cancel{" "}
+                  </span>
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="DeleteButtonForTitle"
+                  onClick={handleDeleteButtonClick}
+                >
+                  <span style={{ fontSize: "12px", fontWeight: "bold" }}>
+                    {" "}
+                    DELETE{" "}
                   </span>
                 </Button>
               </div>
