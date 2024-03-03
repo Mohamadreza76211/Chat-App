@@ -205,7 +205,10 @@ const AdminPanel = () => {
         <div className="ContainerForButtons">
           <Button
             variant="contained"
-            style={{ color: "black", fontWeight: "bold" }}
+            style={{
+              color: "black",
+              fontWeight: "bold",
+            }}
             className="DeleteButton"
             onClick={handleDeleteButtonClick}
           >
@@ -213,7 +216,10 @@ const AdminPanel = () => {
           </Button>
           <Button
             variant="contained"
-            style={{ color: "black", fontWeight: "bold" }}
+            style={{
+              color: "black",
+              fontWeight: "bold",
+            }}
             className="ExportButton"
             onClick={handleExportButtonClick}
           >

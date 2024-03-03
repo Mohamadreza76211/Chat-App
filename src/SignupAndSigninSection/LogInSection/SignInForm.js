@@ -46,26 +46,6 @@ const SignInForm = ({ onSignIn }) => {
     setRememberMe(e.target.checked);
   };
 
-  // Save username, password, and Remember Me status to local storage when submitting the form
-  const onSubmit = () => {
-    if (rememberMe) {
-      localStorage.setItem("rememberMe", rememberMe);
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-    } else {
-      localStorage.removeItem("rememberMe");
-      localStorage.removeItem("username");
-      localStorage.removeItem("password");
-    }
-
-    handleSignInClick();
-  };
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
   const handleSignInClick = () => {
     const userList = JSON.parse(localStorage.getItem("users")) || [];
     const user = userList.find(
@@ -80,6 +60,27 @@ const SignInForm = ({ onSignIn }) => {
       alert("Invalid username or password");
     }
   };
+
+  // Save username, password, and Remember Me status to local storage when submitting the form
+  const onSubmit = () => {
+    if (rememberMe) {
+      localStorage.setItem("rememberMe", rememberMe);
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+    } else {
+      localStorage.removeItem("rememberMe");
+      localStorage.removeItem("username");
+      localStorage.removeItem("password");
+    }
+
+    handleSignInClick();
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <Box
@@ -153,6 +154,7 @@ const SignInForm = ({ onSignIn }) => {
           variant="contained"
           color="primary"
           onClick={handleSubmit(onSubmit)} // Using handleSubmit here
+          type="submit"
         >
           Sign In
         </Button>

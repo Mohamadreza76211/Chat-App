@@ -8,36 +8,6 @@
   align-items: stretch;
   flex-direction: column;
 }
-.LabelForUserName {
-  display: block;
-  text-align: center;
-  font-weight: bolder;
-  flex: 1;
-}
-// .InputForUserName {
-//   display: block;
-//   text-align: center;
-//   flex: 3;
-//   padding: 1em;
-//   border-radius: 6px;
-//   border: 1px solid #ccc;
-//   direction: ltr;
-// }
-.LabelForPassword {
-  display: block;
-  text-align: center;
-  font-weight: bolder;
-  flex: 1;
-}
-// .InputForPassword {
-//   display: block;
-//   text-align: center;
-//   flex: 3;
-//   padding: 1em;
-//   border-radius: 6px;
-//   border: 1px solid #ccc;
-//   direction: ltr;
-// }
 
 .SigninButton {
   border-color: transparent;
